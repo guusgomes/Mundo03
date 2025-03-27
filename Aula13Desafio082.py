@@ -4,14 +4,11 @@ impares = list()
 
 while True: 
     num = int(input('Digite um número: '))
-
     lista.append(num)
-
     opcao = str(input('Quer continuar (S/N)? ')).strip().upper()
 
     if opcao != 'S' and opcao != 'N':
         opcao = str(input('Quer continuar (S/N)? ')).strip().upper()
-    
     if opcao == 'N':
         break
 

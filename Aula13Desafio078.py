@@ -23,7 +23,7 @@ for p, n in enumerate(lista):
 print(f'\nO menor número digitado foi: {menor} nas posições ', end='')
 for p, n in enumerate(lista):
     if n == menor:
-        print(f'{p} ',end='')
+        print(f'{p} ', end='')
 
 
 #lista = []
