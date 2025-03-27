@@ -3,9 +3,9 @@ pares = list()
 impares = list()
 
 while True: 
-    n = int(input('Digite um número: '))
+    num = int(input('Digite um número: '))
 
-    lista.append(n)
+    lista.append(num)
 
     opcao = str(input('Quer continuar (S/N)? ')).strip().upper()
 
@@ -15,12 +15,12 @@ while True:
     if opcao == 'N':
         break
 
-for v in lista:
-    if v % 2 == 0:
-        pares.append(v)
+for n in lista:
+    if n % 2 == 0:
+        pares.append(n)
     else:
-        impares.append(v)
+        impares.append(n)
     
 print(f'Você digitou os números: {lista}.')
 print(f'Os números pares digitados foram: {pares}.')
-print(f'Os números ímpares digitados foram: {impares}')
+print(f'Os números ímpares digitados foram: {impares}.')

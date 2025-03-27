@@ -5,9 +5,9 @@ while True:
 
     if lista.count(n) != 0:
         print('Número duplicado, não foi possível adicionar.')
-    else: 
+    else:
+        lista.append(n) 
         print('Número adicionado.')
-        lista.append(n)
     
     opcao = str(input('Quer continuar (S/N)? ')).strip().upper()
 

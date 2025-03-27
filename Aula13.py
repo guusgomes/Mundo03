@@ -1,5 +1,7 @@
 ## LISTAS SÃO MUTÁVEIS!!
 #
+#
+#
 #num = [2, 5, 9, 1]
 #num[2] = 3
 #
@@ -16,6 +18,7 @@
 #print(f'Essa lista tem {len(num)} elementos.')
 #
 #
+#
 #valores = []
 #
 #valores.append(5)
@@ -28,6 +31,7 @@
 #print('Fim da lista.')
 #
 #
+#
 #valores = list()
 #
 #for cont in range(0, 5):
@@ -37,6 +41,7 @@
 #    print(f'Na posição {c + 1} achei o número {v}.')
 #
 #print('Fim da lista.')
+
 
 
 a = [2, 3, 4, 7]
