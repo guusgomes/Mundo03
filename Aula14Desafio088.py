@@ -11,7 +11,16 @@ for c in range(0, n):
     sleep(0.5)
     jogo = []
     for j in range(0, 6):
-        jogo.append(randint(1, 60))
+        num = randint(1, 60)
+        if num not in jogo:
+            jogo.append(num)
+        else:
+            while num in jogo:
+                num = randint(1, 60)
+                if num not in jogo:
+                    jogo.append(num)
+                    break
+
     print(f'Jogo {c + 1}: {jogo}.')
     jogo.clear
 

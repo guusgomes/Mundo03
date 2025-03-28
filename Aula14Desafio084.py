@@ -3,30 +3,19 @@ dado = []
 pesados = []
 leves = []
 
-dado.append(str(input('Nome: ')))
-dado.append(float(input('Peso: ')))
-lista.append(dado[:]) 
-
-maispesado = dado[1]
-maisleve = dado[1]
-
-dado.clear()
-
-r = str(input('Quer continuar (S/N)? ')).strip().upper()
-
-while r != 'S' and r != 'N':
-    r = str(input('Quer continuar (S/N)? ')).strip().upper()
-
-while r == 'S':
+while True:
     dado.append(str(input('Nome: ')))
     dado.append(float(input('Peso: ')))
-    lista.append(dado[:])
 
+    if len(lista) == 0:
+        maispesado = dado[1]
+        maisleve = dado[1]
     if dado[1] > maispesado:
         maispesado = dado[1]
     if dado[1] < maisleve:
         maisleve = dado[1]
     
+    lista.append(dado[:])
     dado.clear()
 
     r = str(input('Quer continuar (S/N)? ')).strip().upper()
@@ -37,7 +26,7 @@ while r == 'S':
     if r == 'N':
         break
 
-print('=' * 100)
+print('=' * 70)
 print(f'Ao todo, você cadastrou {len(lista)} pessoas.')
 
 print(f'O maior peso foi de {maispesado}Kg. Peso de ', end='')
