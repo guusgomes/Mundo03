@@ -31,7 +31,7 @@ print('=' * 40)
 for k, v in enumerate(time):
     print(f'{k:<4} ', end='')
     for d in v.values():
-        print(f'{str(d):<15}', end='')
+        print(f'{str(d):<14}', end='')
     print()
 
 print('=' * 40)
@@ -51,3 +51,4 @@ while True:
             print(f'     No jogo {i + 1} fez {g} gols.')
     
     print('=' * 40)
+print('FIM')
