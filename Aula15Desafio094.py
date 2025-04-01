@@ -42,7 +42,7 @@ print(f'- As mulheres cadastradas foram: {mulheres}.')
 print('- A lista das pessoas que estão com idade acima da média:')
 
 for c in lista:
-    print('')
+    print('    ', end='')
     if c['Idade'] > media:
         for k, v in c.items():
-            print(f'{k} = {v};', end=' ')   
+            print(f'{k} = {v};', end=' ')

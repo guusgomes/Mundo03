@@ -1,7 +1,7 @@
 aluno = {}
 
 aluno['Nome'] = str(input('Nome: ')).strip().capitalize()
-aluno['Media'] = float(input(f'Média de {aluno['Nome']}: '))
+aluno['Media'] = float(input(f'Média de {aluno["Nome"]}: '))
 
 if aluno['Media'] >= 7:
     aluno['Situação'] = 'APROVADO'

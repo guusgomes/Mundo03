@@ -1,48 +1,53 @@
-jogadores = []
 ficha = {}
+gols = []
+time = []
 
 while True:
-
-    nome = str(input('Nome do jogador: ')).strip().capitalize()
-    partidas = int(input(f'Quantas partidas {nome} jogou? '))
-    somagols = 0
-    gols = []
+    ficha['nome'] = str(input('Nome do jogador: ')).strip().capitalize()
+    partidas = int(input(f'Quantas partidas {ficha["nome"]} jogou? '))
+    gols.clear()
 
     for p in range(0, partidas):
         gols.append(int(input(f'Quantos gols na partida {p + 1}? ')))
 
-    for g in gols:
-        somagols += g
+    ficha['gols'] = gols[:]
+    ficha['total'] = sum(gols)
+    time.append(ficha.copy())
+    resp = str(input('Quer continuar (S/N)? ')).strip().upper()
 
-    ficha['nome'] = nome
-    ficha['gols'] = gols
-    ficha['total'] = somagols
-    jogadores.append(ficha.copy())
-    ficha.clear()
-
-    opc = str(input('Deseja continuar (S/N)? ')).strip().upper()
-
-    while opc != 'N' and opc != 'S':
-        opc = str(input('Deseja continuar (S/N)? ')).strip().upper()
-
-    if opc == 'N':
+    while resp not in 'SN':
+        resp = str(input('Quer continuar (S/N)? ')).strip().upper()
+        
+    if resp == 'N':
         break
 
-print('=' * 70)
-print(f'{'Cód':<4}{'NOME':<15}{'GOLS':<15}{'TOTAL':>6}')
-print('-' * 40)
+print('=' * 40)
+print('Nº  ', end='')
+for i in ficha.keys():
+    print(f'{i:<14}', end='')
+print()
 
-for c in jogadores:
-    for v in c.values():
-        print(f'{c:<4}{c['nome']:<15}{c['gols']:<15}{c['total']:>6}')
+print('=' * 40)
+for k, v in enumerate(time):
+    print(f'{k:<4} ', end='')
+    for d in v.values():
+        print(f'{str(d):<15}', end='')
+    print()
 
+print('=' * 40)
 
-print('=' * 70)
-
-
-'''print('=' * 70)
-
-print(f'O jogador {nome} jogou {partidas} partidas.')
-for p, g in enumerate(gols):
-    print(f'    => Na partida {p + 1}, fez {g} gols.')
-print(f'Foi um total de {somagols} gols.')'''
+while True:
+    busca = int(input('Mostrar dados de qual jogador? (999 para sair): '))
+    
+    if busca == 999:
+        break
+    
+    if busca >= len(time):
+        print(f'Não existe jogador com código {busca}.')
+    else:
+        print(f'    Levantamento do jogador {time[busca]["nome"]}:')
+        
+        for i, g in enumerate(time[busca]['gols']):
+            print(f'     No jogo {i + 1} fez {g} gols.')
+    
+    print('=' * 40)

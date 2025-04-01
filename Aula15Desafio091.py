@@ -11,15 +11,13 @@ for c in range(1, 5):
     jogador['numero'] = str(f'jogador {c}')
     jogador['dado'] = randint(1, 6)
     fichas.append(jogador.copy())
-    print(f'    O {jogador['numero']} tirou {jogador['dado']}.')
+    print(f'    O {jogador["numero"]} tirou {jogador["dado"]}.')
 
 fichas = sorted(fichas, key=lambda item: item['dado'], reverse=True)
 
 sleep(1)
 print('Ranking dos jogadores: ')
-lugar = 0
 
-for j in fichas:
+for k, v in enumerate(fichas):
     sleep(0.5)
-    print(f'    {lugar + 1}º lugar: {j['numero']} com {j['dado']}.')
-    lugar += 1
+    print(f'    {k + 1}º lugar: {v["numero"]} com {v["dado"]}.')
