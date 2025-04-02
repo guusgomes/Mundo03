@@ -24,6 +24,7 @@ def contador(a, b, c):
     
     print('FIM.')
 
+
 contador(1, 10, 1)
 contador(10, 0, 2)
 

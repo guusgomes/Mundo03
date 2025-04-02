@@ -2,10 +2,7 @@ from time import sleep
 
 def maior(*num):
     cont = len(num)
-    maior = 1
-
-    if cont == 0:
-            maior = 0
+    maior = 0
 
     print('=' * 60)
     print('Analisando os valores passados...')
@@ -14,9 +11,9 @@ def maior(*num):
         if n > maior:
             maior = n
 
-        print(n, end=' ')
+        print(n, end=' ', flush=True)
         
-    print(f'Foram informados {cont} valores ao todo.')
+    print(f'\nForam informados {cont} valores ao todo.')
     print(f'O maior valor informado foi {maior}.')
     sleep(1)
 
