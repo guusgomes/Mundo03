@@ -1,31 +1,16 @@
-def notas(*num, sit):
+def notas(*num, sit=False):
     ficha = {}
-    cont = 0
-    soma = 0
-    maior = num[0]
-    menor = num[0]
-    
-    for c in num:
-        cont += 1
-        soma += c
-        if c > maior:
-            maior = c
-        if c < menor:
-            menor = c
-    
-    media = soma / cont
 
-    ficha['total'] = cont
-    ficha['maior'] = maior
-    ficha['menor'] = menor
-    ficha['média'] = media
-
+    ficha['total'] = len(num)
+    ficha['maior'] = max(num)
+    ficha['menor'] = min(num)
+    ficha['média'] = sum(num) / len(num)
     
-    if sit == True:
+    if sit:
         situação = ''
-        if media < 5:
+        if ficha['média'] < 5:
             situação = 'RUIM'
-        elif 5 <= media < 7:
+        elif 5 <= ficha['média'] < 7:
             situação = 'RAZOÁVEL'
         else:
             situação = 'BOA'
@@ -34,5 +19,5 @@ def notas(*num, sit):
     return ficha
 
 
-resp = notas(7, 7, 7, 7, sit=True)
+resp = notas(7, 6, 5, 4, sit=True)
 print(resp)
