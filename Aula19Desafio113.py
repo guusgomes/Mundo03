@@ -1,31 +1,35 @@
 def leiaInt(txt):
     while True:
         try:
-            valor = int(input(f'{txt}'))
-            break
+            valor = int(input(txt))
         
         except (ValueError, TypeError):
-            print('Erro. Tipo de dado digitado inválido.')
+            print('Erro. Valor digitado inválido.')
+            continue
 
         except KeyboardInterrupt:
-            print('O usuário preferiu não informar os dados!')
-        
-    return valor
+            print('\nO usuário preferiu não informar esse dado!')
+            return 0
+
+        else:
+            return valor
 
 
 def leiaFloat(txt):
     while True:
         try:
-            valor = float(input(f'{txt}'))
-            break
+            valor = float(input(txt))
         
         except (ValueError, TypeError):
-            print('Erro. Tipo de dado digitado inválido.')
+            print('Erro. Valor digitado inválido.')
+            continue
 
         except KeyboardInterrupt:
-            print('O usuário preferiu não informar os dados!')
+            print('\nO usuário preferiu não informar os dados!')
+            return 0
         
-    return valor
+        else:
+            return valor
         
 
 inteiro = leiaInt('Digite um número inteiro: ')

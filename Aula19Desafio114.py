@@ -1,6 +1,5 @@
-import requests
-
 def verificarSite(url):
+    import requests
     try:
         resposta = requests.get(url, timeout=5)
         if resposta.status_code == 200:
